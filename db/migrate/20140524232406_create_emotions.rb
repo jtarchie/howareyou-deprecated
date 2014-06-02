@@ -6,6 +6,6 @@ class CreateEmotions < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :emtions, :name, unique: true
+    add_index :emotions, :name, unique: true
   end
 end
