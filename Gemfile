@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers'
 gem 'devise'
 gem 'pg'
-gem 'active_model_serializers'
+gem 'puma'
 gem 'rails', '4.1.1'
 gem 'rails-api'
 
