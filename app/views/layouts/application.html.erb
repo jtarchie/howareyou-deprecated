@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.container {
+  text-align: center;
+}
+
+.container form button {
+  width: 175px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">howareyou</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
+    </div>
+</div></nav>
+<div class='container'>
+  <% if flash[:notice].present? %>
+    <p class="alert alert-success">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+  <% if flash[:alert].present? %>
+    <p class="alert alert-danger">
+      <%= flash[:alert] %>
+    </p>
+  <% end %>
+
+  <%= yield %>
+</div>
+</body>
+</html>
+
+

@@ -7,12 +7,14 @@ describe MindsetsController do
     let(:emotion) { Emotion.create(name: "Happy") }
     let(:user) { User.create(email: "person@example.com", password: "12345678") }
 
-    it "returns a list of all emotions" do
+    before do
       sign_in user
-      post :create, mindset: {emotion_id: emotion.id}, format: "json"
-      json = JSON.parse(response.body)['mindset']
-      expect(json['id']).to be
-      expect(json['emotion']).to eq({"id"=>1, "name"=>"Happy"})
+      post :create, mindset: {emotion_id: emotion.id}
+    end
+
+    it "create a new mindset" do
+      mindset = assigns(:mindset)
+      expect(mindset).to be_persisted
     end
   end
 end

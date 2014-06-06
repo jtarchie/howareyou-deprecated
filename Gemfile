@@ -2,10 +2,13 @@ source 'https://rubygems.org'
 
 gem 'active_model_serializers'
 gem 'devise'
+gem 'haml-rails'
 gem 'pg'
 gem 'puma'
 gem 'rails', '4.1.1'
-gem 'rails-api'
+gem 'sass-rails', '~> 4.0.3'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :test do
   gem 'capybara-webkit'

@@ -1,5 +1,2 @@
-class ApplicationController < ActionController::API
-  include ActionController::MimeResponds
-  include ActionController::ImplicitRender
-  include ActionController::StrongParameters
+class ApplicationController < ActionController::Base
 end

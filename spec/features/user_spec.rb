@@ -8,7 +8,7 @@ feature "As a normal user to the site", js: true do
 
   scenario "I can record my current mindset" do
     visit "/"
-    fill_in "Email address", with: "person@example.com"
+    fill_in "Email", with: "person@example.com"
     fill_in "Password", with: "12345678"
     click_on "Sign in"
 
