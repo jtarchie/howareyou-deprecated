@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'haml-rails'
+gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'rails', '4.1.1'
