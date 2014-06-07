@@ -18,6 +18,6 @@ class MindsetsController < ApplicationController
   private
 
   def mindset_params
-    params.require(:mindset).permit(:emotion_id)
+    params.require(:mindset).permit(:emotion_id, :lat, :lng)
   end
 end
