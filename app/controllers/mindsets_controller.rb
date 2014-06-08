@@ -12,7 +12,7 @@ class MindsetsController < ApplicationController
 
   def create
     @mindset = current_user.mindsets.create(mindset_params)
-    redirect_to root_path, notice: "We've recorded your mindset. Come again!"
+    redirect_to new_mindset_path, notice: "We've recorded your mindset. Come again!"
   end
 
   private

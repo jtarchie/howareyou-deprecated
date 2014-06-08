@@ -16,6 +16,10 @@ describe MindsetsController do
       mindset = assigns(:mindset)
       expect(mindset).to be_persisted
     end
+
+    it "redirects to the new mindset" do
+      expect(response).to redirect_to(new_mindset_path)
+    end
   end
 end
 
