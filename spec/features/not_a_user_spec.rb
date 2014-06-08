@@ -4,6 +4,7 @@ feature "As a user with out login credentials", js: true do
   scenario "I am unable to log in" do
     visit "/"
 
+    click_on "Mindsets"
     fill_in "Email", with: "person@example.com"
     fill_in "Password", with: "12345678"
     click_on "Sign in"
