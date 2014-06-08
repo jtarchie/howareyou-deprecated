@@ -1,7 +1,0 @@
-<h1>How are you?</h1>
-<%- @emotions.each do |emotion| %>
-  <%= form_for @mindset do |f| %>
-    <%= f.hidden_field :emotion_id, value: emotion.id %>
-    <%= button_tag emotion.name, class: 'btn btn-lg btn-primary' %>
-  <% end %>
-<% end %>
