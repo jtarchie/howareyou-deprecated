@@ -1,5 +1,6 @@
 %h1 How are you?
-- @emotions.each do |emotion|
-  = form_for @mindset do |f|
-    = f.hidden_field :emotion_id, value: emotion.id
-    = button_tag emotion.name, class: 'btn btn-lg btn-primary'
+= form_for @mindset do |f|
+  - @emotions.each do |emotion|
+    .input-group
+      = f.radio_button :emotion_id, emotion.id
+      = f.label :emotion_id, emotion.name, value: emotion.id

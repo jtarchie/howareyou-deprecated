@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 feature "As a normal user to the site", js: true do
+  include PageDSL
+
   before do
     Emotion.create!(name: "Happy")
     User.create!(email: "person@example.com", password: "12345678")
@@ -9,17 +11,17 @@ feature "As a normal user to the site", js: true do
   scenario "I can record my current mindset" do
     visit "/"
 
-    click_on "Mindsets"
+    click_menu "Mindsets"
     fill_in "Email", with: "person@example.com"
     fill_in "Password", with: "12345678"
     click_on "Sign in"
 
     expect(page).to have_content("How are you?")
 
-    click_on "Happy"
+    choose "Happy"
     expect(page).to have_content("We've recorded your mindset")
 
-    click_on "Sign Out"
+    click_menu "Sign Out"
     expect(page).to_not have_content "Sign Out"
   end
 end
