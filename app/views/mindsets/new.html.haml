@@ -1,5 +1,5 @@
 %h1 How are you?
-= form_for @mindset do |f|
+= form_for @mindset, data: {location: "mindset"} do |f|
   - @emotions.each do |emotion|
     .input-group
       = f.radio_button :emotion_id, emotion.id
