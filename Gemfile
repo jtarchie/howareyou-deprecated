@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.3.4'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
@@ -19,6 +20,7 @@ end
 
 group :development do
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :production do
