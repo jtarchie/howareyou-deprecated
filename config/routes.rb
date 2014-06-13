@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :mindsets, only: [:create, :new]
   resource :account, only: [:show, :update], controller: :account
 
-  root to: "high_voltage/pages#show", id: "about"
+  root to: "high_voltage/pages#show", id: "frontpage"
 end
