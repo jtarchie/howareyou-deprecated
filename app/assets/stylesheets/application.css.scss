@@ -24,14 +24,14 @@ body {
 
 
 .sr-only {
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0,0,0,0);
   height: 1px;
   margin: -1px;
-  padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .container-fluid {
@@ -50,10 +50,11 @@ body {
 
   label {
     display: inline-block;
-    padding: 5px 30px 5px 5px;
-    min-width: 200px;
-    line-height: 25px;
     font-size: 20px;
+    line-height: 25px;
+    min-width: 200px;
+    padding: 5px 30px 5px 5px;
+    text-transform: capitalize;
   }
 }
 
@@ -61,12 +62,10 @@ body {
   margin-top: 20px;
 }
 
-
-
 input[type="submit"] {
+  -webkit-appearance: button;
   display: inline-block;
   padding: 6px 12px;
   text-align: center;
   vertical-align: middle;
-  -webkit-appearance: button;
 }
