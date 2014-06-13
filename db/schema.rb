@@ -11,18 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607193734) do
+ActiveRecord::Schema.define(version: 20140612230514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emotion_groups", force: true do |t|
+    t.string   "name"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "emotion_groups", ["name"], name: "index_emotion_groups_on_name", unique: true, using: :btree
 
   create_table "emotions", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "emotion_group_id"
   end
 
-  add_index "emotions", ["name"], name: "index_emotions_on_name", unique: true, using: :btree
+  add_index "emotions", ["emotion_group_id", "name"], name: "index_emotions_on_emotion_group_id_and_name", unique: true, using: :btree
 
   create_table "mindsets", force: true do |t|
     t.integer  "user_id"
@@ -49,9 +59,11 @@ ActiveRecord::Schema.define(version: 20140607193734) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "emotion_group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["emotion_group_id"], name: "index_users_on_emotion_group_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

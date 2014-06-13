@@ -5,7 +5,7 @@ class MindsetsController < ApplicationController
   respond_to :html
 
   def new
-    @emotions = Emotion.all
+    @emotions = current_user.emotion_group.emotions
     @mindset = Mindset.new
     respond_with @mindset
   end

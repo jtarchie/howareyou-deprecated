@@ -21,6 +21,7 @@
     .navbar-collapse#navbar-collapse
       %ul.nav
         %li= link_to "Mindsets", new_mindset_path
+        %li= link_to "Account", account_path
         - if current_user.present?
           %li= link_to "Sign Out", destroy_user_session_path
         %li= link_to "About", page_path('about')
