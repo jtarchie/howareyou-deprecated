@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'devise'
 gem 'devise_invitable', '~> 1.3.4'
@@ -7,7 +8,9 @@ gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'rails', '4.1.1'
+gem 'rails-assets-bootstrap'
 gem 'sass-rails', '~> 4.0.3'
+gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'uglifier'
 
 group :test do

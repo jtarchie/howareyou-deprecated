@@ -1,14 +1,9 @@
 %h1 Account Settings
-= form_for @user, url: account_path do |f|
+= simple_form_for @user, url: account_path do |f|
   %h2 Emotion Group
   %p
     Select which group of emotions you want displayed for when you choose your
     mindset. They are categorized by different schools of thought on how emotions
     are associated with each other.
-  - @emotion_groups.each do |emotion_group|
-    .input-group
-      = f.radio_button :emotion_group_id, emotion_group.id
-      = f.label :emotion_group_id, emotion_group.name, value: emotion_group.id
-      %p= emotion_group.emotions.pluck(:name).to_sentence
-  .input-actions
-    = f.submit "Submit"
+  = f.association :emotion_group, collection: @emotion_groups, include_blank: false, as: :radio_buttons
+  = f.button :submit, "Submit"
