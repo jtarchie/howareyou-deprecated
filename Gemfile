@@ -17,18 +17,22 @@ group :test do
   gem 'capybara-webkit'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'rspec-rails'
   gem 'database_cleaner'
 end
 
+group :test, :development do
+  gem 'better_errors'
+  gem 'rspec-rails'
+end
+
 group :development do
-  gem 'spring'
   gem 'letter_opener'
+  gem 'spring'
 end
 
 group :production do
-  gem 'rails_12factor'
   gem 'postmark-rails', '~> 0.8.0'
+  gem 'rails_12factor'
 end
 
 ruby '2.1.2'
